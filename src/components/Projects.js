@@ -1,11 +1,13 @@
-import React from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Award, TrendingUp } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Projects = () => {
+    const [visibleItems, setVisibleItems] = useState(new Set());
+
     const projects = [
         {
             title: "WhatsApp Flows",
-            description: "WhatsApp Flow Builder – Developed a no-code platform with drag-and-drop tools for creating and managing WhatsApp Flows. Integrated with Meta’s WhatsApp Business Cloud API to save and publish flows directly, enabling non-technical users to deploy automated customer journeys quickly.",
+            description: "WhatsApp Flow Builder – Developed a no-code platform with drag-and-drop tools for creating and managing WhatsApp Flows. Integrated with Meta's WhatsApp Business Cloud API to save and publish flows directly, enabling non-technical users to deploy automated customer journeys quickly.",
             image: "WhatsApp_Flows_Project_Image.webp",
             tech: ["React", "Node.js", "MongoDB", "MUI"],
             github: "#",
@@ -29,11 +31,42 @@ const Projects = () => {
         },
     ];
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Check if it's the header section
+                        if (entry.target.classList.contains('projects-header')) {
+                            setTimeout(() => setVisibleItems(prev => new Set([...prev, 'header'])), 100);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        
+        const header = document.querySelector('.projects-header');
+        if (header) {
+            observer.observe(header);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section id="projects" className="py-20 bg-gray-800/50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Featured Projects</h2>
+                <div className={`projects-header text-center mb-16 transition-all duration-1000 ${visibleItems.has("header") ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                    <div className="flex items-center justify-center mb-4">
+                        <Award className="text-cyan-400 mr-3 animate-pulse" size={32} />
+                        <h2 className="text-4xl lg:text-5xl font-bold p-5 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient-text">Featured Projects</h2>
+                        <TrendingUp className="text-purple-400 ml-3 animate-pulse" size={32} />
+                    </div>
+                    <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 mx-auto rounded-full animate-pulse"></div>
+                    <p className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+                        Showcasing innovative solutions and cutting-edge technology implementations
+                    </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,7 +89,7 @@ const Projects = () => {
                                     ))}
                                 </div>
 
-                                <div className="flex space-x-4">
+                                {/* <div className="flex space-x-4">
                                     <a href={project.github} className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300">
                                         <Github size={20} />
                                         <span>Code</span>
@@ -65,12 +98,34 @@ const Projects = () => {
                                         <ExternalLink size={20} />
                                         <span>Demo</span>
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Custom Styles for Header Animation */}
+            <style jsx>{`
+                @keyframes gradient-text {
+                    0%, 100% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                }
+                
+                @keyframes fade-in-up {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                
+                .animate-gradient-text {
+                    background-size: 200% 200%;
+                    animation: gradient-text 3s ease-in-out infinite;
+                }
+                
+                .animate-fade-in-up {
+                    animation: fade-in-up 1s ease-out forwards;
+                }
+            `}</style>
         </section>
     );
 };
