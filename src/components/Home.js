@@ -68,7 +68,7 @@ const Hero = () => {
                                     {/* <img className="h-[100%] w-[100%] rounded-full" src="RP_Photo.jpg"></img> */}
                                 </div>
                             </div>
-                            {/* <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-20 animate-pulse"></div> */}
+                            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur opacity-20 animate-pulse"></div>
                         </div>
                     </div>
                 </div>
