@@ -25,7 +25,7 @@ const Projects = () => {
             title: "Organization Workspace",
             description: "A white-label workspace platform enabling organizations to manage employees, HR processes, salaries, reimbursements, projects, and events like birthdays - all under their own branding, logo, and domain. Features role-based permissions to ensure users access only the content relevant to their role.",
             image: "Organization_Workspace_Project_Image.jpeg",
-            tech: ["React", "Node.js", "TypeScript", "MongoDB", "PostgreSQL", "MUI"],
+            tech: ["React", "Node.js", "Java", "PostgreSQL", "MUI"],
             github: "#",
             demo: "#",
         },
