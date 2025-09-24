@@ -41,7 +41,7 @@ const About = () => {
             <div className="absolute top-20 right-20 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-float"></div>
             <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-float-delayed"></div>
             <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-blue-500/3 rounded-full blur-2xl animate-pulse"></div>
-            
+
             {/* Animated grid background */}
             <div className="absolute inset-0 opacity-5">
                 <div className="w-full h-full" style={{
@@ -49,7 +49,7 @@ const About = () => {
                     backgroundSize: '50px 50px'
                 }}></div>
             </div>
-            
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header with enhanced animations */}
                 <div className={`text-center mb-16 transition-all duration-1000 ${visibleItems.has('header') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -99,7 +99,7 @@ const About = () => {
                             <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-purple-500 via-cyan-500 to-purple-500 opacity-30">
                                 <div className="absolute top-0 w-0.5 h-full bg-gradient-to-b from-purple-400 to-cyan-400 animate-timeline-grow"></div>
                             </div>
-                            
+
                             {/* Full-Stack Development with enhanced animations */}
                             <div className="relative group/item hover:scale-[1.02] transition-all duration-300">
                                 <div className="flex items-start">
@@ -116,12 +116,12 @@ const About = () => {
                                             </div>
                                         </div>
                                         <p className="text-gray-300 leading-relaxed mb-4 group-hover/item:text-gray-200 transition-colors duration-300">
-                                            Leading full-stack development initiatives using modern MERN stack technologies. 
+                                            Leading full-stack development initiatives using modern MERN stack technologies.
                                             Architecting scalable applications with focus on performance and user experience.
                                         </p>
                                         <div className="flex flex-wrap gap-2">
                                             {['React.js', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript'].map((tech, index) => (
-                                                <span 
+                                                <span
                                                     key={tech}
                                                     className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-500/30 hover:bg-blue-500/30 hover:scale-105 transition-all duration-300 cursor-default"
                                                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -152,13 +152,18 @@ const About = () => {
                                         <div className="flex items-center mb-3">
                                             <span className="text-white font-semibold text-sm">2.9 Years of Database Expertise</span>
                                         </div>
+                                        <div className="flex items-center mb-3">
+                                            <span className="text-white font-semibold text-sm">
+                                                2+ Years as a Full Stack Developer
+                                            </span>
+                                        </div>
                                         <p className="text-gray-300 leading-relaxed mb-4 group-hover/item:text-gray-200 transition-colors duration-300">
-                                            Specialized in enterprise database solutions, creating robust PL/SQL packages and optimizing 
+                                            Specialized in enterprise database solutions, creating robust PL/SQL packages and optimizing
                                             complex data operations across Oracle environments.
                                         </p>
                                         <div className="flex flex-wrap gap-2">
                                             {['SQL', 'PL/SQL', 'Oracle', 'PostgreSQL'].map((tech, index) => (
-                                                <span 
+                                                <span
                                                     key={tech}
                                                     className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs font-medium border border-orange-500/30 hover:bg-orange-500/30 hover:scale-105 transition-all duration-300 cursor-default"
                                                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -178,7 +183,7 @@ const About = () => {
                                 { text: "Team Lead", color: "from-purple-500/20 to-purple-600/20 text-purple-400 border-purple-500/30" },
                                 { text: "Full-Stack", color: "from-blue-500/20 to-blue-600/20 text-blue-400 border-blue-500/30" }
                             ].map((badge, index) => (
-                                <span 
+                                <span
                                     key={index}
                                     className={`px-4 py-2 bg-gradient-to-r ${badge.color} rounded-full text-sm font-medium border flex items-center hover:scale-105 transition-all duration-300 cursor-default`}
                                     style={{ animationDelay: `${index * 0.1}s` }}
