@@ -115,6 +115,11 @@ const About = () => {
                                                 <span className="text-sm font-medium">2023 - Present</span>
                                             </div>
                                         </div>
+                                        <div className="flex items-center mb-3">
+                                            <span className="text-white font-semibold text-sm">
+                                                2+ Years as a Full Stack Developer
+                                            </span>
+                                        </div>
                                         <p className="text-gray-300 leading-relaxed mb-4 group-hover/item:text-gray-200 transition-colors duration-300">
                                             Leading full-stack development initiatives using modern MERN stack technologies.
                                             Architecting scalable applications with focus on performance and user experience.
@@ -152,11 +157,7 @@ const About = () => {
                                         <div className="flex items-center mb-3">
                                             <span className="text-white font-semibold text-sm">2.9 Years of Database Expertise</span>
                                         </div>
-                                        <div className="flex items-center mb-3">
-                                            <span className="text-white font-semibold text-sm">
-                                                2+ Years as a Full Stack Developer
-                                            </span>
-                                        </div>
+
                                         <p className="text-gray-300 leading-relaxed mb-4 group-hover/item:text-gray-200 transition-colors duration-300">
                                             Specialized in enterprise database solutions, creating robust PL/SQL packages and optimizing
                                             complex data operations across Oracle environments.
