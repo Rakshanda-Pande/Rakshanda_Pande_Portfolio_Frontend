@@ -150,7 +150,6 @@ const About = () => {
                                             </div>
                                         </div>
                                         <div className="flex items-center mb-3">
-                                            <Star size={16} className="text-yellow-400 mr-2 animate-pulse" />
                                             <span className="text-white font-semibold text-sm">2.9 Years of Database Expertise</span>
                                         </div>
                                         <p className="text-gray-300 leading-relaxed mb-4 group-hover/item:text-gray-200 transition-colors duration-300">
